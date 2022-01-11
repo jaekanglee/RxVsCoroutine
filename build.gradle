@@ -1,28 +1,18 @@
-plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
-    id 'java'
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.3"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-    mavenCentral()
-}
-
-dependencies {
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib"
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-
-    implementation "io.reactivex.rxjava2:rxjava:2.2.21"
-    implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
-
-}
-
-test {
-    useJUnitPlatform()
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
